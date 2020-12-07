@@ -67,4 +67,18 @@ void Account_storage::add_account()
 	account.display();
 }
 
+void Account_storage::search_account()
+{
+	int search_id;
+	std::cout << "Enter id for searching account: ";
+	std::cin >> search_id;
+
+	Account result_account = list[search_id % size]->search(search_id);
+
+	if (result_account.get_id() == -1)
+		std::cout << "Sorry, no account with id " << search_id << " exists.\n";
+	else
+		result_account.display();
+}
+
 

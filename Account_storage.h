@@ -11,6 +11,7 @@ public:
 	Account_storage(int sz = 10);
 	~Account_storage();
 	void add_account();
+	void search_account();
 private:
 	Linked_list** list;
 	int size;
