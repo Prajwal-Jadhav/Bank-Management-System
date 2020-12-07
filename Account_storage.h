@@ -3,6 +3,7 @@
 #define ACCOUNT_STORAGE_H
 
 #include "Account.h"
+#include "Linked_list.h"
 #include <fstream>
 
 class Account_storage
@@ -12,7 +13,8 @@ class Account_storage
 	void populate_from_record(std::string file_name);
 	void add_account(Account acc);
 private:
-	Account** list;
+	Linked_list** list;
+	int size;
 };
 
 #endif 
