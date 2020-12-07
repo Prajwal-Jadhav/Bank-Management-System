@@ -3,6 +3,7 @@
 
 static int customer_unique_id = 0;
 
+// Constructor for creating new account using user input.
 Account::Account() : id(customer_unique_id++)
 {
 	std::string f, l;
@@ -26,6 +27,8 @@ void Account::display()
 	std::cout << "Balance " << balance << std::endl;
 }
 
+
+// Operator overloading useful in linked list implementation
 bool operator==(int target_id, Account acc)
 {
 	return target_id == acc.id;

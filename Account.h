@@ -16,6 +16,8 @@ private:
 	double balance;
 };
 
+
+// Operator overloading useful for linked list implementation
 bool operator==(int target_id, Account acc);
 
 #endif // !ACCOUNT_H
