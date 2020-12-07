@@ -52,6 +52,7 @@ void Account_storage::populate_from_record()
 	}
 
 	std::cout << "Data loaded from database successfully!!\n";
+	file.close();
 }
 
 void Account_storage::add_account()
