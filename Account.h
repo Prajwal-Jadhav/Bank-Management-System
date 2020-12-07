@@ -12,8 +12,8 @@ public:
 	
 private:
 	std::string name;
-	int id;
-	double balance;
+	int id;				// id for uniquely identifying account
+	double balance;		// money in account
 };
 
 
