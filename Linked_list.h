@@ -17,6 +17,7 @@ public:
 	bool isEmpty();
 	void add_at_end(Account acc);
 	void remove_by_id(int id);
+	Account search(int id);
 	int size();
 	void clear();
 	~Linked_list();

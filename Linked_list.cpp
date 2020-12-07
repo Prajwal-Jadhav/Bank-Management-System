@@ -83,6 +83,23 @@ void Linked_list::remove_by_id(int id)
 	
 }
 
+// finds account with given id if account doesn't exist then return fake/error account
+Account Linked_list::search(int search_id)
+{
+	Node* current = first;
+
+	while (current != NULL)
+	{
+		if (search_id == current->data)
+			return current->data;
+
+		current = current->link;
+	}
+
+	// if doesn't exits return error/ fake account
+	return Account(-1, "", 0.0);
+}
+
 void Linked_list::clear()
 {
 	Node* current = first;

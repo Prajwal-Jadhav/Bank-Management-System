@@ -10,11 +10,12 @@ class Account_storage
 public:
 	Account_storage(int sz = 10);
 	~Account_storage();
-	void populate_from_record();
 	void add_account();
 private:
 	Linked_list** list;
 	int size;
+
+	void populate_from_record();
 };
 
 #endif 
