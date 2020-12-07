@@ -1,7 +1,8 @@
 #include "Account.h"
 #include <iostream>
 
-static int customer_unique_id = 0;
+// A static int for generating unique id for each account
+static int customer_unique_id = 30;
 
 // Constructor for creating new account using user input.
 Account::Account() : id(customer_unique_id++)
@@ -20,11 +21,21 @@ Account::Account() : id(customer_unique_id++)
 	std::cout << "Account with id " << id << " successfully created!!!\n";
 }
 
+// Parameterized constructor
+Account::Account(int i, std::string n, double b)
+	: id(i), name(n), balance(b) {};
+
 void Account::display()
 {
 	std::cout << "Name: " << name << std::endl;
 	std::cout << "Customer Id: " << id << std::endl;
 	std::cout << "Balance " << balance << std::endl;
+}
+
+// getter for id
+int Account::get_id()
+{
+	return id;
 }
 
 

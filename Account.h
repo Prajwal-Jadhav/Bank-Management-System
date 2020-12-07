@@ -8,7 +8,9 @@ class Account
 	friend bool operator==(int target_id, Account acc);
 public:
 	Account();
+	Account(int i, std::string n, double b);
 	void display();
+	int get_id();
 	
 private:
 	std::string name;

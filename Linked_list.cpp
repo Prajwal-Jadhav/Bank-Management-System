@@ -55,7 +55,7 @@ void Linked_list::remove_by_id(int id)
 		{
 			if (id == current->data)
 			{
-				found == true;
+				found = true;
 				break;
 			}
 

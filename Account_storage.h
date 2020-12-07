@@ -11,7 +11,7 @@ public:
 	Account_storage(int sz = 10);
 	~Account_storage();
 	void populate_from_record();
-	void add_account(Account acc);
+	void add_account();
 private:
 	Linked_list** list;
 	int size;
