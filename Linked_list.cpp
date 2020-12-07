@@ -43,6 +43,9 @@ void Linked_list::remove_by_id(int id)
 		auto temp = first;
 		first = first->link;
 		delete temp;
+
+		if (first == NULL)	// if there was only one element in list
+			last = NULL;
 	}
 	else
 	{
@@ -66,6 +69,10 @@ void Linked_list::remove_by_id(int id)
 		if (found)
 		{
 			trailcurrent->link = current->link;
+
+			if (current == last)	// if required element was the first one
+				last = trailcurrent;
+
 			delete current;
 		}
 		else

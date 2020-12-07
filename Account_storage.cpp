@@ -13,6 +13,8 @@ Account_storage::Account_storage(int sz)
 
 	for (int i = 0; i < sz; ++i)
 		list[i] = new Linked_list;
+
+	populate_from_record();
 }
 
 // Destructor for deallocating storage
