@@ -82,4 +82,18 @@ void Account_storage::search_account()
 		result_account.display();
 }
 
+void Account_storage::remove_account()
+{
+	int search_id;
+	std::cout << "\nEnter id for removing account: ";
+	std::cin >> search_id;
+
+	int result = list[search_id % size]->remove_by_id(search_id);
+
+	if (result == 0)
+		std::cout << "\n\n*********  Account deleted successfully  ********\n\n";
+	else
+		std::cout << "\n\n********* No such account with given id exists ******** \n\n";
+}
+
 
