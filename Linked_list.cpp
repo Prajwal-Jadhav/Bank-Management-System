@@ -32,11 +32,11 @@ void Linked_list::add_at_end(Account acc)
 	}
 }
 
-void Linked_list::remove_by_id(int id)
+int Linked_list::remove_by_id(int id)
 {
 	if (first == NULL)	// if list is empty
 	{
-		std::cerr << "Cannot delete from an empty list.\n";
+		return 1; // indicating failure
 	}
 	else if (id == first->data)  // first is the required one
 	{
@@ -46,6 +46,8 @@ void Linked_list::remove_by_id(int id)
 
 		if (first == NULL)	// if there was only one element in list
 			last = NULL;
+
+		return 0; // indicating success
 	}
 	else
 	{
@@ -74,10 +76,11 @@ void Linked_list::remove_by_id(int id)
 				last = trailcurrent;
 
 			delete current;
+			return 0;  // indicating success
 		}
 		else
 		{
-			std::cerr << "No such element with given id exists.\n";
+			return 1;  // indicating failure
 		}
 	}
 	

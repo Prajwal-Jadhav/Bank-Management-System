@@ -12,6 +12,7 @@ public:
 	~Account_storage();
 	void add_account();
 	void search_account();
+	void remove_account();
 private:
 	Linked_list** list;
 	int size;
