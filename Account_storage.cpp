@@ -77,7 +77,7 @@ void Account_storage::search_account()
 	Account result_account = list[search_id % size]->search(search_id);
 
 	if (result_account.get_id() == -1)
-		std::cout << "Sorry, no account with id " << search_id << " exists.\n";
+		std::cout << "\n*********Sorry, no account with id " << search_id << " exists.*************\n";
 	else
 		result_account.display();
 }

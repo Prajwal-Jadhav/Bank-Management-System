@@ -15,6 +15,7 @@ int main()
         std::cout << "0 - Exit\n";
         std::cout << "1 - Search for account\n";
         std::cout << "2 - Create new account\n";
+        std::cout << "3 - Remove account by id\n";
 
         int input;
         std::cin >> input;
@@ -25,6 +26,8 @@ int main()
             accounts.search_account();
         else if (input == 2)
             accounts.add_account();
+        else if (input == 3)
+            accounts.remove_account();
         else
             std::cout << "Please enter a valid input\n\n";
         
