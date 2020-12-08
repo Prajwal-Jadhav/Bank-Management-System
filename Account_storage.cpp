@@ -30,6 +30,7 @@ Account_storage::~Account_storage()
 // Populating accounts with data from text databse account_database.txt
 void Account_storage::populate_from_record()
 {
+	std::cout << "\nStarting to load account database....\n";
 	std::ifstream file("account_database.txt");
 
 	if (!file.is_open())
