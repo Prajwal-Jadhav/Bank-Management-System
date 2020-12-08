@@ -11,7 +11,7 @@ int main()
 
     while (true)
     {
-        std::cout << "Main menu: Press the digit to perform action\n";
+        std::cout << "Main menu: Press the digit to perform action\n\n";
         std::cout << "0 - Exit\n";
         std::cout << "1 - Search for account\n";
         std::cout << "2 - Create new account\n";
@@ -21,6 +21,11 @@ int main()
 
         if (input == 0)
             break;
+        else if (input == 1)
+        {
+            accounts.search_account();
+        }
+        
     }
 
     std::cout << "\n************** Thank you for using bank management system  *****************\n";

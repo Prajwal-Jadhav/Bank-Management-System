@@ -27,9 +27,10 @@ Account::Account(int i, std::string n, double b)
 
 void Account::display()
 {
+	std::cout << "\n******  Account Information  *******\n";
 	std::cout << "Name: " << name << std::endl;
 	std::cout << "Customer Id: " << id << std::endl;
-	std::cout << "Balance " << balance << std::endl;
+	std::cout << "Balance " << balance << "\n\n";
 }
 
 // getter for id

@@ -30,7 +30,7 @@ Account_storage::~Account_storage()
 // Populating accounts with data from text databse account_database.txt
 void Account_storage::populate_from_record()
 {
-	std::cout << "\nStarting to load account database....\n";
+	std::cout << "\nStarting to load account database....\n\n";
 	std::ifstream file("account_database.txt");
 
 	if (!file.is_open())
@@ -49,12 +49,12 @@ void Account_storage::populate_from_record()
 		double balance;
 
 		is >> id >> first_name >> last_name >> balance;
-		Account new_account(id, first_name + last_name, balance);
+		Account new_account(id, first_name + " " + last_name, balance);
 
 		list[id % size]->add_at_end(new_account);
 	}
 
-	std::cout << "Data loaded from database successfully!!\n";
+	std::cout << "Data loaded from database successfully!!\n\n";
 	file.close();
 }
 
@@ -71,7 +71,7 @@ void Account_storage::add_account()
 void Account_storage::search_account()
 {
 	int search_id;
-	std::cout << "Enter id for searching account: ";
+	std::cout << "\nEnter id for searching account: ";
 	std::cin >> search_id;
 
 	Account result_account = list[search_id % size]->search(search_id);
