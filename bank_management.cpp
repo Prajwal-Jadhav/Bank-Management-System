@@ -6,12 +6,12 @@
 
 int main()
 {
-    std::cout << "*************  Welcome to Bank Management System  **************\n\n";
+    std::cout << "*************  Welcome to Bank Management System  **************\n";
     Account_storage accounts;
 
     while (true)
     {
-        std::cout << "Main menu: Press the digit to perform action\n\n";
+        std::cout << "\nMain menu: Press the digit to perform action\n\n";
         std::cout << "0 - Exit\n";
         std::cout << "1 - Search for account\n";
         std::cout << "2 - Create new account\n";
@@ -24,6 +24,14 @@ int main()
         else if (input == 1)
         {
             accounts.search_account();
+        }
+        else if (input == 2)
+        {
+            accounts.add_account();
+        }
+        else
+        {
+            std::cout << "Please enter a valid input\n\n";
         }
         
     }

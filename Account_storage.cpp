@@ -64,7 +64,7 @@ void Account_storage::add_account()
 	int id = account.get_id();
 	list[id % size]->add_at_end(account);
 
-	std::cout << "Account added successfully!!\nHere are details: \n";
+	std::cout << "\n\n*********Account added successfully!!*************\n\nHere are details: \n";
 	account.display();
 }
 

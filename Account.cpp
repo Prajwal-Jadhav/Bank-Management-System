@@ -9,16 +9,15 @@ Account::Account() : id(customer_unique_id++)
 {
 	std::string f, l;
 	double b;
-	std::cout << "Enter information for creating account\n";
+	std::cout << "\nEnter information for creating account: \n";
 	std::cout << "Enter first name and last name: ";
 	std::cin >> f >> l;
 	name = f + " " + l;
 
-	std::cout << "Enter initial account balance.";
+	std::cout << "Enter initial account balance: ";
 	std::cin >> b;
 
 	balance = b;
-	std::cout << "Account with id " << id << " successfully created!!!\n";
 }
 
 // Parameterized constructor
