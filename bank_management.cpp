@@ -22,17 +22,11 @@ int main()
         if (input == 0)
             break;
         else if (input == 1)
-        {
             accounts.search_account();
-        }
         else if (input == 2)
-        {
             accounts.add_account();
-        }
         else
-        {
             std::cout << "Please enter a valid input\n\n";
-        }
         
     }
 
