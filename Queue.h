@@ -19,9 +19,18 @@ struct Node
 
 class Queue
 {
+public:
+	~Queue();
+	void enqueue(Node node);
+	void dequeue();
 private:
-	const int capacity = 3;
+	// Data members with in-class initializers
+	int current_size = 0;
+	Node* first = NULL;
+	Node* last = NULL;
 
+	// Helper function
+	void clear();
 };
 
 #endif // !QUEUE_H
