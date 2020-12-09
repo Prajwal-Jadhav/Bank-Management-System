@@ -17,6 +17,7 @@ struct Node
 };
 
 
+// Queue class for holding info about transactions
 class Queue
 {
 public:
