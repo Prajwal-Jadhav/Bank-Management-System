@@ -14,6 +14,8 @@ public:
 	void add_account();
 	void search_account();
 	void remove_account();
+	void initiate_transaction();
+	void complete_a_transaction();
 private:
 	Linked_list** list;
 	Queue transactions;

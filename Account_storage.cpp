@@ -34,7 +34,7 @@ void Account_storage::populate_from_record()
 
 	if (!file.is_open())
 	{
-		std::cerr << "Failed to open account_database.txt file.\n";
+		std::cout << "Failed to open account_database.txt file.\n";
 		return;
 	}
 
