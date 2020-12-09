@@ -5,7 +5,6 @@
 
 // Constructor which reads input from  a 
 // text file to create accounts
-// Some code is remaining to be written
 Account_storage::Account_storage(int sz)
 {
 	size = sz;
