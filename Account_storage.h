@@ -4,6 +4,7 @@
 
 #include "Account.h"
 #include "Linked_list.h"
+#include "Queue.h"
 
 class Account_storage
 {
@@ -15,6 +16,7 @@ public:
 	void remove_account();
 private:
 	Linked_list** list;
+	Queue transactions;
 	int size;
 
 	void populate_from_record();
