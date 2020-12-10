@@ -11,6 +11,7 @@ public:
 	Account(int i, std::string n, double b);
 	void display();
 	int get_id();
+	double get_balance();
 	
 private:
 	std::string name;

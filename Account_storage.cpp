@@ -57,6 +57,7 @@ void Account_storage::populate_from_record()
 	file.close();
 }
 
+
 void Account_storage::add_account()
 {
 	Account account;
@@ -66,6 +67,7 @@ void Account_storage::add_account()
 	std::cout << "\n\n*********Account added successfully!!*************\n\nHere are details: \n";
 	account.display();
 }
+
 
 void Account_storage::search_account()
 {
@@ -81,6 +83,7 @@ void Account_storage::search_account()
 		result_account.display();
 }
 
+
 void Account_storage::remove_account()
 {
 	int search_id;
@@ -95,26 +98,60 @@ void Account_storage::remove_account()
 		std::cout << "\n\n********* No such account with given id exists ******** \n\n";
 }
 
+
 void Account_storage::initiate_transaction()
 {
 	std::cout << "\n\n********** Transaction initiated ************\n\n";
 
+	// Get the address/reference to the account from which to send amount
 	int amount_to_be_sent;
 	std::cout << "Enter the amount to be sent: ";
 	std::cin >> amount_to_be_sent;
 
 	std::cout << std::endl;
 	int from_account_id;
-	std::cout << "\nEnter the id of account from which to send amount: ";
+	std::cout << "\nEnter the id of account from which to send the amount: ";
 	std::cin >> from_account_id;
 
+	Account* from_account;
 	try
 	{
-
+		from_account = list[from_account_id % size]->return_account_address(from_account_id);
 	}
 	catch (std::runtime_error& error)
 	{
-
+		std::cout << "No such account with given id " << from_account_id << " exists.\n";
+		std::cout << "******* Terminating Transaction **********\n";
+		return;
 	}
+
+	// Check if account has sufficient balance
+	if (from_account->get_balance() < amount_to_be_sent)
+	{
+		std::cout << "Insufficient balance in the account\n";
+		std::cout << "******* Terminating Transaction **********\n";
+		return;
+	}
+
+	// Get the address/reference to the account from which to send amount
+	std::cout << std::endl;
+	int to_account_id;
+	std::cout << "\nEnter the id of account to which send the amount: ";
+	std::cin >> to_account_id;
+
+	Account* to_account;
+	try
+	{
+		to_account = list[to_account_id % size]->return_account_address(to_account_id);
+	}
+	catch (std::runtime_error& error)
+	{
+		std::cout << "No such account with given id " << to_account_id << " exists.\n";
+		std::cout << "******* Terminating Transaction **********\n";
+		return;
+	}
+
+	transactions.enqueue(from_account, to_account, amount_to_be_sent);
+	std::cout << "\n******** Transaction Initiated Successfully **********\n\n";
 }
 

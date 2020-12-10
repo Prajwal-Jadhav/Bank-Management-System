@@ -38,6 +38,11 @@ int Account::get_id()
 	return id;
 }
 
+// getter for balance
+double Account::get_balance()
+{
+	return balance;
+}
 
 // Operator overloading useful in linked list implementation
 bool operator==(int target_id, Account acc)

@@ -124,6 +124,7 @@ Linked_list::~Linked_list()
 	this->clear();
 }
 
+// Returns pointer to the account with given id
 Account* Linked_list::return_account_address(int search_id)
 {
 	if (first == NULL)
