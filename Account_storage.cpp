@@ -176,7 +176,7 @@ void Account_storage::complete_a_transaction()
 
 	std::cout << "**********  Transaction Completed Successfully  ************\n\n";
 
-	std::cout << "Account information:\n";
+	std::cout << "Updated account information:\n";
 
 	from_account->display();
 	std::cout << "\n\n";
