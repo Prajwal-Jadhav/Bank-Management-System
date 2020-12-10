@@ -179,11 +179,9 @@ void Account_storage::complete_a_transaction()
 	std::cout << "Account information:\n";
 
 	from_account->display();
-
 	std::cout << "\n\n";
 
 	to_account->display();
-
 	std::cout << "\n";
 }
 
