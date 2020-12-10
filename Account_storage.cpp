@@ -95,4 +95,26 @@ void Account_storage::remove_account()
 		std::cout << "\n\n********* No such account with given id exists ******** \n\n";
 }
 
+void Account_storage::initiate_transaction()
+{
+	std::cout << "\n\n********** Transaction initiated ************\n\n";
+
+	int amount_to_be_sent;
+	std::cout << "Enter the amount to be sent: ";
+	std::cin >> amount_to_be_sent;
+
+	std::cout << std::endl;
+	int from_account_id;
+	std::cout << "\nEnter the id of account from which to send amount: ";
+	std::cin >> from_account_id;
+
+	try
+	{
+
+	}
+	catch (std::runtime_error& error)
+	{
+
+	}
+}
 
