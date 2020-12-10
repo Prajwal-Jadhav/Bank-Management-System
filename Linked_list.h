@@ -18,6 +18,7 @@ public:
 	void add_at_end(Account acc);
 	int remove_by_id(int id);
 	Account search(int id);
+	Account* return_account_address(int search_id);
 	int size();
 	void clear();
 	~Linked_list();

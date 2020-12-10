@@ -103,6 +103,8 @@ Account Linked_list::search(int search_id)
 	return Account(-1, "", 0.0);
 }
 
+// Helper function for clearing/deallocating memory
+// And returning list to initial condition
 void Linked_list::clear()
 {
 	Node* current = first;
@@ -116,7 +118,30 @@ void Linked_list::clear()
 	first = NULL;
 }
 
+// Destructor
 Linked_list::~Linked_list()
 {
 	this->clear();
+}
+
+Account* Linked_list::return_account_address(int search_id)
+{
+	if (first == NULL)
+		throw std::runtime_error("No element with such id exists\n");
+	else if (search_id == first->data)
+		return &(first->data);
+	else
+	{
+		auto current = first;
+		while (current != NULL)
+		{
+			if (search_id == current->data)
+				return &(current->data);
+			else
+				current = current->link;
+		}
+	}
+
+	// if no account is found
+	throw std::runtime_error("No element with such id exists\n");
 }
