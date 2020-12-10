@@ -104,7 +104,7 @@ void Account_storage::initiate_transaction()
 	std::cout << "\n\n********** Transaction initiated ************\n\n";
 
 	// Get the address/reference to the account from which to send amount
-	int amount_to_be_sent;
+	double amount_to_be_sent;
 	std::cout << "Enter the amount to be sent: ";
 	std::cin >> amount_to_be_sent;
 
@@ -153,5 +153,37 @@ void Account_storage::initiate_transaction()
 
 	transactions.enqueue(from_account, to_account, amount_to_be_sent);
 	std::cout << "\n******** Transaction Initiated Successfully **********\n\n";
+}
+
+
+// function to complete transactions in queue
+void Account_storage::complete_a_transaction()
+{
+	if (transactions.is_empty())
+	{
+		std::cout << "\nCurrently there are no transactions pending\n";
+		return;
+	}
+
+	Queue_node current_transaction = transactions.dequeue();
+
+	Account* from_account = current_transaction.from;
+	Account* to_account = current_transaction.to;
+	double amount = current_transaction.amount;
+
+	from_account->balance -= amount;
+	to_account->balance += amount;
+
+	std::cout << "**********  Transaction Completed Successfully  ************\n\n";
+
+	std::cout << "Account information:\n";
+
+	from_account->display();
+
+	std::cout << "\n\n";
+
+	to_account->display();
+
+	std::cout << "\n";
 }
 

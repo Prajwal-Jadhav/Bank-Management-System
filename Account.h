@@ -3,9 +3,12 @@
 
 #include <string>
 
+class Account_storage;
+
 class Account
 {
 	friend bool operator==(int target_id, Account acc);
+	friend class Account_storage;
 public:
 	Account();
 	Account(int i, std::string n, double b);
