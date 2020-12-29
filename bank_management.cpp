@@ -1,6 +1,29 @@
 // bank_management.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+/*
+    Bank Management Software
+
+    Group members:
+    1. Prajwal Jadhav - F19111004
+    2. Pritish Kokare
+    3. Ajay Kathwate
+
+    A bank management software written in C++ using the concepts in data structures.
+    Contains facilities to read account information in a text database.
+
+    Accounts which contain name, balance, id, etc. are represented in memory using concepts
+    such as array, linked list.
+
+    This software has the ability to search for accounts using id. Furthermore, we can create an account
+    as well as remove/delete an account
+
+    There is ability to create a transaction to transfer balance from one account to the other. Transaction
+    are stored in memory using a queue. As a result, we can complete a transaction using first in first out principle.
+
+    We hope you find this project interesting. Thank you!
+*/
+
 #include <iostream>
 #include "Account_storage.h"
 
